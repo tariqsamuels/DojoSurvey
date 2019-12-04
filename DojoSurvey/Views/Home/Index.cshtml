@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text-center container">
+        <div class="row">
+            @model DojoSurvey.Models.Survey
+            <form asp-action="Submit" asp-controller="Home" method="post">
+                <div>
+                    <p><span asp-validation-for="YourName" class="text-danger"></span></p>
+                    <p><span asp-validation-for="DojoLocation" class="text-danger"></span></p>
+                    <p><span asp-validation-for="FavoriteLanguage" class="text-danger"></span></p>
+                    <p><span asp-validation-for="Comment" class="text-danger"></span></p>
+                </div>
+                <div>
+                    <label>Your Name: </label>
+                    <input asp-for="YourName">
+
+                    <p>
+                    <label>Dojo Location: </label>
+                    <select asp-for="DojoLocation">
+                        <option value="Tulsa">Tulsa</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Chicago">Chicago</option>
+                    </select>
+                    </p>
+                    
+                    <p>
+                    <label>Favorite Language: </label>
+                    <select asp-for="FavoriteLanguage">
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="MEAN">MEAN</option>
+                        <option value="C#">C#</option>
+                    </select>
+                    </p>
+
+                    <p>
+                    <label>Comment (optional)</label>
+                    <textarea asp-for="Comment"></textarea>
+                    <input type="submit" value="Submit">
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
